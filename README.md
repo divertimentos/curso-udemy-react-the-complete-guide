@@ -1,4 +1,5 @@
-# curso-udemy-react-the-complete-guide
+# React: The Complete Guide
+
 Course "React - The Complete Guide" by Maximilian Schwarzmüller
 
 # Section 2: JavaScript Refresher
@@ -23,4 +24,4 @@ console.log(name); // Max
 console.log(age); // undefined
 ```
 
- ## 
+## 
