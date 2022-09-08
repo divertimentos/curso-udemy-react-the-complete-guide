@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem";
+import React from 'react';
+import ExpenseItem from './components/ExpenseItem';
 
 function App() {
   return (
