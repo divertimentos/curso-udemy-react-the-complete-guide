@@ -1,4 +1,3 @@
-import React from "react";
 import "./ExpenseItem.css";
 
 function ExpenseItem() {
