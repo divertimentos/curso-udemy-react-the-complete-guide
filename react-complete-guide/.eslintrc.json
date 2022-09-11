@@ -5,6 +5,7 @@
   },
   "plugins": ["prettier"],
   "rules": {
+    "react/prop-types": "off",
     "prettier/prettier": "error",
     "no-unused-vars": "warn",
     "no-console": "off",
