@@ -30,3 +30,27 @@ console.log(age); // undefined
 
 - Thing that I already knew but have forgotten: "JSX" stands for "JavaScript XML"
 - Thing that I didn't know: it's because HTML in the end **is** XML. Mind blowing!
+
+### A Closer Look At JSX
+
+- According to Maximilian, importing React fro 'react' is an archaic practice.
+- Every React element, under the hood, is actually a `React.createElement()` function/method. It takes 3 arguments:
+  - a string with the name of the object
+  - an object containing attributes to configure the element
+  - an infinite that represents elements inside the div tag
+
+```javascript
+return (
+  <div>
+    <h2>Let's get started</h2>
+    <Expenses items={expenses} />
+  </div>
+);
+
+return React.createElement(
+  "div",
+  {},
+  React.createElement("h2", {}, "Let's get started"),
+  React.createElement(Expenses, { items: expenses })
+);
+```
