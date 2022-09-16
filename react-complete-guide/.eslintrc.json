@@ -15,8 +15,11 @@
     "class-methods-use-this": "off",
     "node/no-unsupported-features/es-syntax": [
       "error",
+      { "ignores": ["modules"] }
+    ],
+    "react/function-component-definition": [
+      "error",
       {
-        "ignores": ["modules"],
         "namedComponents": ["function-declaration", "arrow-function"],
         "unnamedComponents": "arrow-function"
       }
