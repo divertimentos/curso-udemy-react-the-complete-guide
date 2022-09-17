@@ -8,6 +8,7 @@ const ExpenseItem = ({ title, amount, date }) => {
   const clickHandler = () => {
     setTitleVar("Updated!");
   };
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={date} />
