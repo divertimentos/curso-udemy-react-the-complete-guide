@@ -61,3 +61,27 @@ return React.createElement(
 - React is all about functions. Its rendering procedure is to call `<App />`, that calls its children, that call their children, and so on, until everything is rendered all at once. It's a stateless way of displaying HTML.
 - By using state, React offers us a way to re-render something whenever some data changes. States makes React aware of changes dynamically. That's what it means to be **declarative** instead of just **imperative**.
 - When you use the function provided by `setState()`s destructured array, it will trigger a re-render in the component where you set the data update.
+
+## Updating State That Depends On The Previus State
+
+- Sometimes, when you update a huge amount of data in the same time, like in a form for example, you can see yourself relying on a copy of your previous state that is already outdated. To solve this, you should use this syntax instead:
+
+```javascript
+// Old one:
+setUserInput({
+  ...userInput,
+  enteredDate: value,
+});
+```
+
+```javascript
+// New one:
+setUserInput((prevState) => {
+  return {
+    ...userInput,
+    enteredDate: value,
+  };
+});
+```
+
+This method assures that you're using the last state snapshot instead of the last object created as a copy of the last updated state.
