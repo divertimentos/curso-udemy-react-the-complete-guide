@@ -85,3 +85,6 @@ setUserInput((prevState) => {
 ```
 
 This method assures that you're using the last state snapshot instead of the last object created as a copy of the last updated state.
+
+## Adding the Two-Way Binding
+
