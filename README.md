@@ -90,3 +90,4 @@ This method assures that you're using the last state snapshot instead of the las
 
 If you declare a function in the parent, pass it as a prop to the child and make the child call it, it you can receive data generated in the child as a parameter, and then use it in the parent. I really didn't know that pattern.
 
+![lifting state up](https://github.com/divertimentos/curso-udemy-react-the-complete-guide/blob/main/media/lifting.png)
