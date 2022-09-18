@@ -86,6 +86,7 @@ setUserInput((prevState) => {
 
 This method assures that you're using the last state snapshot instead of the last object created as a copy of the last updated state.
 
-## Child-to-Parent communication (bottom-up)
+## Child-to-Parent Communication (Bottom-up)
 
 If you declare a function in the parent, pass it as a prop to the child and make the child call it, it you can receive data generated in the child as a parameter, and then use it in the parent. I really didn't know that pattern.
+
