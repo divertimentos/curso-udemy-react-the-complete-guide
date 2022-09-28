@@ -4,50 +4,58 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = ({ onSaveExpenseData }) => {
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
 
-  const { enteredTitle, enteredAmount, enteredDate } = userInput;
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
+
+  // const { enteredTitle, enteredAmount, enteredDate } = userInput;
 
   const titleChangeHandler = (event) => {
-    const { value } = event.target;
-    setUserInput((prevState) => {
-      return {
-        ...prevState,
-        enteredTitle: value,
-      };
-    });
+    setEnteredTitle(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // });
   };
 
   const amountChangeHandler = (event) => {
-    const { value } = event.target;
-    setUserInput((prevState) => {
-      return {
-        ...prevState,
-        enteredAmount: value,
-      };
-    });
+    setEnteredAmount(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
   };
 
   const dateChangeHandler = (event) => {
-    const { value } = event.target;
-
-    setUserInput((prevState) => {
-      return {
-        ...prevState,
-        enteredDate: value,
-      };
-    });
+    setEnteredDate(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    onSaveExpenseData(userInput);
-    setUserInput({});
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
+    onSaveExpenseData(expenseData);
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
   return (

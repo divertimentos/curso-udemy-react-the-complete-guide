@@ -8,9 +8,7 @@ const NewExpense = ({ onAddExpense }) => {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(
-      "expenseData passada de ExpenseForm (filho) para o NewExpense (pai):"
-    );
+
     onAddExpense(expenseData);
     console.dir(expenseData);
   };
