@@ -10,7 +10,7 @@ const NewExpense = ({ onAddExpense }) => {
     };
 
     onAddExpense(expenseData);
-    console.dir(expenseData);
+    // console.dir(expenseData);
   };
 
   return (
