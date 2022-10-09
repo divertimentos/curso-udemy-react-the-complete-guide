@@ -8,7 +8,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  const [isFormOpen, setIsFormOpen] = useState(true);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -40,14 +40,13 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
 
   const cancelHandler = (event) => {
     event.preventDefault();
-    console.log("Abra/Fecha");
     setIsFormOpen((currState) => !currState);
   };
 
   let formContent = (
     <div className="open-expense__actions">
-      <button onClick={cancelHandler} type="submit">
-        Add New Expense (open)
+      <button onClick={cancelHandler} type="button">
+        Add New Expense
       </button>
     </div>
   );
