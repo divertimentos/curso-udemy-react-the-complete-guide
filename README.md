@@ -93,3 +93,44 @@ If you declare a function in the parent, pass it as a prop to the child and make
 ![lifting state up](https://github.com/divertimentos/curso-udemy-react-the-complete-guide/blob/main/media/lifting.png)
 
 The process is rather simple: it's passing data from a component to its sibling by finding their first common parent, which will receive the data and pass it down to its other child (the target one).
+
+# 
+
+# Section 5: Rendering Lists & Conditional Content
+
+## Outputting Conditional Content
+
+A different way to render conditional content: you can put all the rendering logic of mapped list into a let variable with a default value that can be updated it a certain condition is met. Then you render **the** variable that stores the HTML and its logic instead of calculating everything in the return of the function. Like this:
+
+
+
+```javascript
+  let expensesContent = (
+    <div>
+      <p1>No Expenses Found</p1>
+    </div>
+  );
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+
+  return (
+    <Card className="expenses">
+      <ExpensesFilter
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler}
+      />
+
+      {expensesContent}
+    </Card>
+  );
+
+```
