@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { useState } from "react";
+import FormFields from "./FormFields";
 
 import "./ExpenseForm.css";
 
@@ -7,6 +8,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [isFormOpen, setIsFormOpen] = useState(true);
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -33,45 +35,38 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+    setIsFormOpen((currState) => !currState);
   };
 
-  return (
-    <form onSubmit={submitHandler}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
-          <label>Title</label>
-          <input
-            type="text"
-            value={enteredTitle}
-            onChange={titleChangeHandler}
-          />
-        </div>
-        <div className="new-expense__control">
-          <label>Amount</label>
-          <input
-            type="number"
-            min="0.01"
-            step="0.01"
-            onChange={amountChangeHandler}
-            value={enteredAmount}
-          />
-        </div>
-        <div className="new-expense__control">
-          <label>Date</label>
-          <input
-            type="date"
-            min="2019-01-01"
-            max="9999-12-31"
-            onChange={dateChangeHandler}
-            value={enteredDate}
-          />
-        </div>
-      </div>
-      <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
-      </div>
-    </form>
+  const cancelHandler = (event) => {
+    event.preventDefault();
+    console.log("Abra/Fecha");
+    setIsFormOpen((currState) => !currState);
+  };
+
+  let formContent = (
+    <div className="open-expense__actions">
+      <button onClick={cancelHandler} type="submit">
+        Add New Expense (open)
+      </button>
+    </div>
   );
+
+  if (isFormOpen) {
+    formContent = (
+      <FormFields
+        enteredTitle={enteredTitle}
+        titleChangeHandler={titleChangeHandler}
+        amountChangeHandler={amountChangeHandler}
+        enteredAmount={enteredAmount}
+        dateChangeHandler={dateChangeHandler}
+        enteredDate={enteredDate}
+        cancelHandler={cancelHandler}
+      />
+    );
+  }
+
+  return <form onSubmit={submitHandler}>{formContent}</form>;
 };
 
 export default ExpenseForm;
