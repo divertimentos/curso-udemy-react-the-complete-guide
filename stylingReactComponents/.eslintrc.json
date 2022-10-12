@@ -14,7 +14,10 @@
     "object-shorthand": "off",
     "class-methods-use-this": "off",
     "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
     "label-has-associated-control": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "node/no-unsupported-features/es-syntax": [
       "error",
       { "ignores": ["modules"] }
@@ -27,6 +30,7 @@
       }
     ],
     "react/jsx-filename-extension": [0],
+    "react/button-has-type": "off",
     "import/extensions": "off",
     "react/no-unescaped-entities": 0
   }
