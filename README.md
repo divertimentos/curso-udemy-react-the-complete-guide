@@ -1,4 +1,4 @@
-# React: The Complete Guide
+ React: The Complete Guide
 
 This is the course "**React - The Complete Guide**" by Maximilian Schwarzmüller, and this is: **Things that I didn't know before enrolling this course**
 
@@ -102,8 +102,6 @@ The process is rather simple: it's passing data from a component to its sibling 
 
 A different way to render conditional content: you can put all the rendering logic of mapped list into a let variable with a default value that can be updated it a certain condition is met. Then you render **the** variable that stores the HTML and its logic instead of calculating everything in the return of the function. Like this:
 
-
-
 ```javascript
   let expensesContent = (
     <div>
@@ -132,5 +130,28 @@ A different way to render conditional content: you can put all the rendering log
       {expensesContent}
     </Card>
   );
-
 ```
+
+# Section 6: Styling React Components
+## Styled Components & Dynamic Props
+É possível passar *props* para dentro dos components criados com o *styled* simplesmente passando elas como num componente normal.
+
+```javascript 
+  & input {
+    display: block;
+    width: 100%;
+    border: 1px solid ${(props) => (props.invalid ? "red" : "#ccc")};
+    background: ${(props) => (props.invalid ? "salmon" : "transparent")}
+    font: inherit;
+    line-height: 1.5rem;
+    padding: 0 0.25rem;
+  }
+
+  & input:focus {
+    outline: none;
+    background: #fad0ec;
+    border-color: #8b005d;
+  }
+```
+
+## Using CSS Modules
