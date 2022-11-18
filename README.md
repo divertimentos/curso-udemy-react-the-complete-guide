@@ -1,4 +1,4 @@
- React: The Complete Guide
+# React: The Complete Guide
 
 This is the course "**React - The Complete Guide**" by Maximilian Schwarzmüller, and this is: **Things that I didn't know before enrolling this course**
 
@@ -91,8 +91,6 @@ This method assures that you're using the last state snapshot instead of the las
 If you declare a function in the parent, pass it as a prop to the child and make the child call it, it you can receive data generated in the child as a parameter, and then use it in the parent. I really didn't know that pattern.
 
 ![lifting state up](media/lifting.png)
-
-
 
 The process is rather simple: it's passing data from a component to its sibling by finding their first common parent, which will receive the data and pass it down to its other child (the target one).
 
