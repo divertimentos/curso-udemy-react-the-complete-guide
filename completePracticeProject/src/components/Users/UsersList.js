@@ -4,7 +4,7 @@ import Card from "../UI/Card";
 const UsersList = ({ usersList }) => {
   if (usersList)
     return usersList.map((user) => (
-      <Card className={classes.users}>
+      <Card key={user.userId} className={classes.users}>
         <ul>
           <li>
             {user.userName} ({user.userAge} years old)

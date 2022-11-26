@@ -25,7 +25,11 @@ const AddUser = ({ dataList, setDataList }) => {
 
     setDataList((currList) => [
       ...currList,
-      { userName: enteredUsername, userAge: enteredAge },
+      {
+        userName: enteredUsername,
+        userAge: enteredAge,
+        userId: Math.random().toString(),
+      },
     ]);
 
     console.log(enteredUsername, enteredAge);
