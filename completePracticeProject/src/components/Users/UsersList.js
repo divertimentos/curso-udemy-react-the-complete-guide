@@ -6,8 +6,9 @@ const UsersList = ({ usersList }) => {
     return usersList.map((user) => (
       <Card className={classes.users}>
         <ul>
-          <li>Name: {user.userName}</li>
-          <li>Age: {user.userAge}</li>
+          <li>
+            {user.userName} ({user.userAge} years old)
+          </li>
         </ul>
       </Card>
     ));
