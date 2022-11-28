@@ -180,3 +180,16 @@ return [
 ```
 
 But this method has a gotcha. It lacks the `key` prop. But you'll have to hardcode it.
+
+## Portals
+
+Semantically, modals should not be nested. Since it's an overlay, it should be above anything. It's like creating a button by setting a `<div />` with an `onclick={}` prop. It works, but it's wrong.
+
+So we use Portals to transfer components to somewhere else in the real DOM using an `id` in the real DOM (`'/public/index.html'`) and `ReactDOM.createPortal()` in the component we want to move. The first `createPortal` parameter is the component to be transfered, and second is the reference to the `id` we set: 
+
+```javascript
+{ReactDOM.createPortal(
+    <Backdrop onConfirm={props.onConfirm} />,
+    document.getElementById("backdrop-root")
+)}
+```
