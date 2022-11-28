@@ -163,3 +163,20 @@ A different way to render conditional content: you can put all the rendering log
 Just breakpoints 101 here, even though even this knowledge is brand new to me. You can use open Debugging tab, navigate through Sources until you find the problematic file, and line, and then add a breakpoint to start pausing on every function call. Very helpful. 
 
 <img src="media/debugging-01.png" title="" alt="" data-align="center">
+
+# Fragments, Portals & Refs
+
+## JSX Limitations
+
+When dealing with the lack of an unique parent component for many children rendered side-by-side, you can use the `<Fragment />` as well as arrays:
+
+```javascript
+return [
+    error && <ErrorModal />, // <-- the comma for each child 
+    <Card>
+        <p>Content</p>
+    </Card>
+]
+```
+
+But this method has a gotcha. It lacks the `key` prop. But you'll have to hardcode it.

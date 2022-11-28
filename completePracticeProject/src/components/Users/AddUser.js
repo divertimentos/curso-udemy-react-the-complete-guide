@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import classes from "./AddUser.module.css";
 import ErrorModal from "../UI/ErrorModal";
+import Wrapper from "../Helpers/Wrapper";
 
 const AddUser = ({ dataList, setDataList }) => {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -61,7 +62,7 @@ const AddUser = ({ dataList, setDataList }) => {
   };
 
   return (
-    <>
+    <Wrapper>
       {error && (
         <ErrorModal
           onConfirm={errorHandler}
@@ -90,7 +91,7 @@ const AddUser = ({ dataList, setDataList }) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </>
+    </Wrapper>
   );
 };
 
