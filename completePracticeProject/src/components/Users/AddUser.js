@@ -1,23 +1,21 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, Fragment, useRef } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import classes from "./AddUser.module.css";
 import ErrorModal from "../UI/ErrorModal";
 
-const AddUser = ({ dataList, setDataList }) => {
-  const [enteredUsername, setEnteredUsername] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
-  const [error, setError] = useState();
+const AddUser = ({ setDataList }) => {
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
 
-  useEffect(() => {
-    console.log("Data List");
-    console.dir(dataList);
-  }, [dataList]);
+  const [error, setError] = useState();
 
   const addUserHandler = (event) => {
     event.preventDefault();
+    const enteredName = nameInputRef.current.value;
+    const enteredUserAge = ageInputRef.current.value;
 
-    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+    if (enteredName.trim().length === 0 || enteredUserAge.trim().length === 0) {
       setError({
         title: "Invalid Input",
         message: "Please enter a valid name and age (non-empty values).",
@@ -25,7 +23,7 @@ const AddUser = ({ dataList, setDataList }) => {
       return;
     }
 
-    if (+enteredAge < 1) {
+    if (+enteredUserAge < 1) {
       setError({
         title: "Invalid Age",
         message: "Please enter a valid age (greater than zero)",
@@ -36,24 +34,14 @@ const AddUser = ({ dataList, setDataList }) => {
     setDataList((currList) => [
       ...currList,
       {
-        userName: enteredUsername,
-        userAge: enteredAge,
+        userName: enteredName,
+        userAge: enteredUserAge,
         userId: Math.random().toString(),
       },
     ]);
 
-    console.log(enteredUsername, enteredAge);
-
-    setEnteredUsername("");
-    setEnteredAge("");
-  };
-
-  const userNameChangeHandler = (event) => {
-    setEnteredUsername(event.target.value);
-  };
-
-  const ageChangeHandler = (event) => {
-    setEnteredAge(event.target.value);
+    nameInputRef.current.value = "";
+    ageInputRef.current.value = "";
   };
 
   const errorHandler = () => {
@@ -72,20 +60,10 @@ const AddUser = ({ dataList, setDataList }) => {
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
-          <input
-            id="username"
-            type="text"
-            value={enteredUsername}
-            onChange={userNameChangeHandler}
-          />
+          <input id="username" type="text" ref={nameInputRef} />
 
           <label htmlFor="age">Age (Years)</label>
-          <input
-            id="age"
-            type="number"
-            value={enteredAge}
-            onChange={ageChangeHandler}
-          />
+          <input id="age" type="number" ref={ageInputRef} />
 
           <Button type="submit">Add User</Button>
         </form>

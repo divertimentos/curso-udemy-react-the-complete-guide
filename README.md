@@ -193,3 +193,9 @@ So we use Portals to transfer components to somewhere else in the real DOM using
     document.getElementById("backdrop-root")
 )}
 ```
+
+## Refs
+
+We can use refs instead of states to gather input values. But, since refs point to actual DOM data, manipulating them is not-recommended.
+
+When you assign the `useRef()` to a const, you can use the `ref` prop to listen to it. It generates an object with a `current` property in it. Then you can, for example, use `exampleRef.current.value` to store values typed by the user. 
