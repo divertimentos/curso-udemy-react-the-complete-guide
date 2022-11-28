@@ -202,4 +202,4 @@ When you assign the `useRef()` to a const, you can use the `ref` prop to listen 
 
 
 
-When you access values through refs, you are dealing with **Uncontrolled Components**. Their internal state is not controlled by React anymore, to have this in mind. It's a side-effect of using less code to access the DOM directly through this hook.
+When you access values through refs, you are dealing with **Uncontrolled Components**. Their internal state is not controlled by React anymore, have this in mind. It's a side-effect of using less code to access the DOM directly through this hook.
