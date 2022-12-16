@@ -2,6 +2,12 @@
 
 This is the course "**React - The Complete Guide**" by Maximilian Schwarzmüller, and this is: **Things that I didn't know before enrolling this course**
 
+
+
+**Important note:** this project uses **Yarn** instead of NPM.
+
+# 
+
 # Section 2: JavaScript Refresher
 
 ## Destructuring
@@ -200,6 +206,10 @@ We can use **refs** instead of **states** to gather input values. But, since ref
 
 When you assign the `useRef()` to a const, you can use the `ref` prop to listen to it. It generates an object with a `current` property in it. Then you can, for example, use `exampleRef.current.value` to store values typed by the user. 
 
-
-
 When you access values through refs, you are dealing with **Uncontrolled Components**. Their internal state is not controlled by React anymore, have this in mind. It's a side-effect of using less code to access the DOM directly through this hook.
+
+
+
+# Side-Effects, Reducers, and Context API
+
+The `useEffect()` hook has 2 parameters, a function, and an Array. The function is executed **after** every component evaluation if the specified dependency (in the array, the second parameter) changes. That means that `useEffect()` hook doesn't re-run whenever the component re-renders, it has its own lifecycle.
