@@ -25,7 +25,6 @@ const Login = (props) => {
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
   };
-
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
 

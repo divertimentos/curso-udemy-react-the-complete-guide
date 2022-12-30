@@ -251,3 +251,13 @@ useEffect(() => {
 
 
 ```
+
+## useReducer()
+
+Is a tool when you need **more powerful state management**. 
+
+```javascript
+// the main useReducer() syntax:
+
+const [state, dispatchFn] = useReducer(reducerFn, initialState, initFn);
+```
