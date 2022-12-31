@@ -264,4 +264,8 @@ const [state, updateStateFn] = useState(argument);
 const [state, dispatchFn] = useReducer(reducerFn, initialState, initFn);
 ```
 
-It seems like the `useState()` function we already know, since inside the array that function returns there's a state snapshot and a function that updates it. But there's a key difference in this `dispatchFn` function: it dispatches an action that will be consumed by the first `useReducer()` argument, `reducerFn`. It holds both the last state snapshot and the action passed to it, and returns a new, updated state. Kinda tricky to understand; better seeing it in action (no pun intended!)
+It seems like the `useState()` function we already know, since inside the array that function returns there's a state snapshot and a function that updates it. But there's a key difference in this `dispatchFn` function: it dispatches an action that will be consumed by the first `useReducer()` argument, `reducerFn`. It holds both the last state snapshot and the action passed to it, and returns a new, updated state. 
+
+
+
+Kinda tricky to understand; better seeing it in action (no pun intended!)
