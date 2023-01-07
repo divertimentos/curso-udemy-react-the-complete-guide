@@ -208,7 +208,6 @@ When you access values through refs, you are dealing with **Uncontrolled Compone
 
 The `useEffect()` hook has 2 parameters, a function, and an Array. The function is executed **after** every component evaluation if the specified dependency (in the array, the second parameter) changes. That means that `useEffect()` hook doesn't re-run whenever the component re-renders, it has its own lifecycle.
 
-
 Note: when you update a state within `useEffect()`, it triggers an infinite loop because both `useEffect()` and `setState()` causes the component to run again. Explaining each step:
 
 1. The component is rendered, so
@@ -223,8 +222,6 @@ Note: when you update a state within `useEffect()`, it triggers an infinite loop
 
 The `useEffect()`, as its name says, deals with side-effects. They often are HTTP requests, but they can also be, for example, keystrokes in a form your application is listening to.
 
-
-
 ## Using the useEffect() Cleanup Function
 
 `useEffect` is capable of returning either an anonymous/arrow or a named function. 
@@ -234,8 +231,6 @@ This feature is useful when you need to run something **after** the main logic w
 In the example, we set a timer to update the state that listens to the keystrokes only after the user stopped typing for 500ms. This is what happens: the function that sets the state will be updated only from time to time. But we still need to make it run the state update to record groups of characters typed, not only delaying them.
 
 In this case we use the `return` of the `useEffect()` to clear the timeout after every `useEffect()` trigger. It the user starts typing before the time set in the `setTimeout()`, it will reset the time interval. By doing this, the state will register only bunches of characters at a time.
-
-
 
 ```javascript
 useEffect(() => {
@@ -248,8 +243,6 @@ useEffect(() => {
     clearTimeout(identifier);
   };
 }, [enteredEmail, enteredPassword]);
-
-
 ```
 
 ## useReducer()
@@ -266,6 +259,30 @@ const [state, dispatchFn] = useReducer(reducerFn, initialState, initFn);
 
 It seems like the `useState()` function we already know, since inside the array that function returns there's a state snapshot and a function that updates it. But there's a key difference in this `dispatchFn` function: it dispatches an action that will be consumed by the first `useReducer()` argument, `reducerFn`. It holds both the last state snapshot and the action passed to it, and returns a new, updated state. 
 
-
-
 Kinda tricky to understand; better seeing it in action (no pun intended!)
+
+## useState() vs useReducer()
+
+Max says we'll **know** when to use `useReducer()`. Sure, I'll trust my instincts and starting using in whichever place I see fit. He also says that we use it when `useState()` becomes too cumbersome. He couldn't be more generic.
+
+### useState():
+
+* The main state management built-in tool
+
+* Typically we start using it
+
+* Often is all you need
+
+* Great for independent pieces of state/data
+
+* Great if state updates are easy and limited to a few kinds of updates
+
+| useState                                                              | useReducer                                                    |
+| --------------------------------------------------------------------- | ------------------------------------------------------------- |
+| The main state management built-in tool                               | Great if you need more power                                  |
+| Typically we start using it                                           | Should be considered if you have related pieces of state/data |
+| Often is all you need                                                 | Can be helpful if you have more complex state updates         |
+| Great for independent pieces of state/data                            |                                                               |
+| Great if state updates are easy and limited to a few kinds of updates |                                                               |
+
+I **hate** vague/sloppy/generic explanations.
