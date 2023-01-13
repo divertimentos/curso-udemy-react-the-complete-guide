@@ -290,3 +290,9 @@ Max says we'll **know** when to use `useReducer()`. Sure, I'll trust my instinct
 I **hate** vague/sloppy/generic explanations.
 
 ## React Context API
+
+* Clearly there's a problem whenever you pass a prop to a component just for it to pass the prop downwards to another child component. 
+
+* The other problem related to this practice is the prop drilling, which has to be avoided, even though its definition is kinda loose. You *feel* when you're practicing prop drilling.
+
+* Built into React there's a behind-the-scenes, component-wide, **State Storage** named **React Context**. It allows us to trigger an action and pass it only to the component interested in it.
