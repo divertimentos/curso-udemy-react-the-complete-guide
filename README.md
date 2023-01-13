@@ -296,3 +296,5 @@ I **hate** vague/sloppy/generic explanations.
 * The other problem related to this practice is the prop drilling, which has to be avoided, even though its definition is kinda loose. You *feel* when you're practicing prop drilling.
 
 * Built into React there's a behind-the-scenes, component-wide, **State Storage** named **React Context**. It allows us to trigger an action and pass it only to the component interested in it.
+
+* Then creating a file named `/store/auth-context.js` we use kebab-case instead of CamelCase because it would imply that we're building a component inside it, which is not necessairly true.
