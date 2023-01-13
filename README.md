@@ -297,4 +297,4 @@ I **hate** vague/sloppy/generic explanations.
 
 * Built into React there's a behind-the-scenes, component-wide, **State Storage** named **React Context**. It allows us to trigger an action and pass it only to the component interested in it.
 
-* Then creating a file named `/store/auth-context.js` we use kebab-case instead of CamelCase because it would imply that we're building a component inside it, which is not necessairly true.
+* When creating, for example, a file named `/store/auth-context.js` we use kebab-case instead of CamelCase because it would imply that we're building a component inside it, which is not necessairly true.
