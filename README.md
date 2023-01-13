@@ -263,7 +263,9 @@ Kinda tricky to understand; better seeing it in action (no pun intended!)
 
 ## useState() vs useReducer()
 
-Max says we'll **know** when to use `useReducer()`. Sure, I'll trust my instincts and starting using in whichever place I see fit. He also says that we use it when `useState()` becomes too cumbersome. He couldn't be more generic.
+Max says we'll **know** when to use `useReducer()`. Sure, I'll trust my instincts and starting using in whichever place I see fit. He also says that we use it when `useState()` becomes too cumbersome. 
+
+**He couldn't be more generic.**
 
 ### useState():
 
@@ -286,3 +288,5 @@ Max says we'll **know** when to use `useReducer()`. Sure, I'll trust my instinct
 | Great if state updates are easy and limited to a few kinds of updates |                                                               |
 
 I **hate** vague/sloppy/generic explanations.
+
+## React Context API
