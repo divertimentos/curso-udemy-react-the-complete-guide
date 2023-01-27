@@ -315,6 +315,10 @@ I **hate** vague/sloppy/generic explanations.
    
    * Don't call them in any block statements
 
-3* Not official/extra: **always** add everything you refer to inside `useEffect()` as a dependency, unless there's a good reason no to do that.
+3. Not official/extra: **always** add everything you refer to inside `useEffect()` as a dependency, unless there's a good reason no to do that.
 
 ![rules of hooks](media/rules-of-hooks.png)
+
+### Diving into "Forward Refs"
+
+Max said that it's something you shouldn't be using often because it's not a recommended React pattern; but you should it sometimes. I love when Max explains something the vaguest possible way.  
