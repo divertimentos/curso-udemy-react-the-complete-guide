@@ -304,3 +304,17 @@ I **hate** vague/sloppy/generic explanations.
 * Good for state management between components' data, but not good to be used **in** components configuration
 
 * Not optimized for high frequency changes. There's a better tool for this, namely **Redux**.
+
+### Learning the Rules of Hooks
+
+1. **Only** call React Hooks in React Functions (React Component Functions or Custom Hooks)
+
+2. Only call React Hooks at the **top level**.
+   
+   * Don't call hooks in nested functions
+   
+   * Don't call them in any block statements
+
+3* Not official/extra: **always** add everything you refer to inside `useEffect()` as a dependency, unless there's a good reason no to do that.
+
+![rules of hooks](media/rules-of-hooks.png)
