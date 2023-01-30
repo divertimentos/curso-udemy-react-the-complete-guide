@@ -1,5 +1,7 @@
 # React: The Complete Guide
 
+[*Note to self: break all projects into separated repositories linked by this README. Use them as items in your portfolio. Deploy them using Vercel or directly into your website as subdomains.*]
+
 This is the course "**React - The Complete Guide**" by Maximilian Schwarzmüller, and this is: **Things that I didn't know before enrolling this course**
 
 **Important note:** this project uses **Yarn** instead of NPM.
