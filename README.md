@@ -322,3 +322,5 @@ I **hate** vague/sloppy/generic explanations.
 ### Diving into "Forward Refs"
 
 Max said that it's something you shouldn't be using often because it's not a recommended React pattern; but you should it sometimes. I love when Max explains something the vaguest possible way.  
+
+Max then taught how to use an avoidable pattern what involves the `useImperativeHandle` hook, and refs to focus the password field when the entered password is invalid. Ok, nice, but now I'll need to learn the proper/acceptable way to do that.
