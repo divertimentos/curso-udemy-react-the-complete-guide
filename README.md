@@ -160,7 +160,7 @@ A different way to render conditional content: you can put all the rendering log
   }
 ```
 
-# Debugging React Apps
+# Section 7: Debugging React Apps
 
 ## Working with Breakpoints
 
@@ -168,7 +168,7 @@ Just breakpoints 101 here, even though even this knowledge is brand new to me. Y
 
 <img src="media/debugging-01.png" title="" alt="" data-align="center">
 
-# Fragments, Portals & Refs
+# Section 9: Fragments, Portals & Refs
 
 ## JSX Limitations
 
@@ -206,7 +206,7 @@ When you assign the `useRef()` to a const, you can use the `ref` prop to listen 
 
 When you access values through refs, you are dealing with **Uncontrolled Components**. Their internal state is not controlled by React anymore, have this in mind. It's a side-effect of using less code to access the DOM directly through this hook.
 
-# Side-Effects, Reducers, and Context API
+# Section 10: Side-Effects, Reducers, and Context API
 
 The `useEffect()` hook has 2 parameters, a function, and an Array. The function is executed **after** every component evaluation if the specified dependency (in the array, the second parameter) changes. That means that `useEffect()` hook doesn't re-run whenever the component re-renders, it has its own lifecycle.
 
@@ -326,3 +326,34 @@ I **hate** vague/sloppy/generic explanations.
 Max said that it's something you shouldn't be using often because it's not a recommended React pattern; but you should it sometimes. I love when Max explains something the vaguest possible way.  
 
 Max then taught how to use an avoidable pattern what involves the `useImperativeHandle` hook, and refs to focus the password field when the entered password is invalid. Ok, nice, but now I'll need to learn the proper/acceptable way to do that.
+
+# Section 11: Food Order App
+
+A nice trick. When using, for exemple, the `<input />` html tag, if you pass a spreaded prop, you can add custom props into an object that will turn into the remainder of accepted props of that tag. To put it simple:
+
+
+
+```javascript
+{
+    id: 0,
+    type: "text",
+}
+
+const Input = (props) => {
+return (
+     <input id={props.input.id} {...props.input} />
+)}
+
+<Input input={{
+    id: "amount",
+    type: "number",
+    min: "1",
+    max: "5",
+    step: "1",
+    defaultValue: "1",
+} />
+
+
+```
+
+Note that `id` is added to that example object, so `<input />` stores it as a standard prop. However, `type: "text"` is an extra prop, which works because of that simple little trick. I've learned something similar when I was studying Python.
