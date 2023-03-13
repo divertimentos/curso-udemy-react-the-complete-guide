@@ -92,7 +92,7 @@ This method assures that you're using the last state snapshot instead of the las
 
 ## Child-to-Parent Communication (Bottom-up)
 
-If you declare a function in the parent, pass it as a prop to the child and make the child call it, it you can receive data generated in the child as a parameter, and then use it in the parent. I really didn't know that pattern.
+If you declare a function in the parent, pass it as a prop to the child and make the child call it, you can receive data generated in the child as a parameter, and then use it in the parent. I really didn't know that pattern.
 
 ![lifting state up](media/lifting.png)
 
@@ -331,8 +331,6 @@ Max then taught how to use an avoidable pattern what involves the `useImperative
 
 A nice trick. When using, for exemple, the `<input />` html tag, if you pass a spreaded prop, you can add custom props into an object that will turn into the remainder of accepted props of that tag. To put it simple:
 
-
-
 ```javascript
 {
     id: 0,
@@ -352,8 +350,6 @@ return (
     step: "1",
     defaultValue: "1",
 } />
-
-
 ```
 
 Note that `id` is added to that example object, so `<input />` stores it as a standard prop. However, `type: "text"` is an extra prop, which works because of that simple little trick. I've learned something similar when I was studying Python.
